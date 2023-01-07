@@ -16,5 +16,11 @@ const covidCountry = () => {
     .then((res) => res.json())
     .then((data) => result(data));
 };
+const countryEnter = document.getElementById("countryName");
+countryEnter.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    covidCountry();
+  }
+});
 
 covid();
